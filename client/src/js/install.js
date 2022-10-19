@@ -8,7 +8,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
 });
 
 butInstall.addEventListener('click', async () => {
-  window.propmt()
+  window.prompt()
   butInstall.style.visibility = 'hidden';
   butInstall.setAttribute('disabled', true);
 });

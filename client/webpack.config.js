@@ -21,7 +21,9 @@ module.exports = () => {
         title: "Snipp-it",
       }),
       new WebpackPwaManifest({
+        
         name: "Snipp-it",
+        fingerprints: false,
         inject: true,
         short_name: "Snipp-it",
         description: "A simple note taking app",

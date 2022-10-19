@@ -21,16 +21,18 @@ module.exports = () => {
         title: "Snipp-it",
       }),
       new WebpackPwaManifest({
-        
+
         name: "Snipp-it",
         fingerprints: false,
         inject: true,
         short_name: "Snipp-it",
-        description: "A simple note taking app",
+        description: "Snipp your snippets!",
         background_color: "#01579b",
         theme_color: "#ffffff",
         start_url: "./",
         publicPath: "./",
+        orientation: "portrait",
+        display: "standalone",
         icons: [
           {
             src: path.resolve("src/images/logo.png"),

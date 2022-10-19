@@ -28,8 +28,8 @@ module.exports = () => {
         description: "A simple note taking app",
         background_color: "#01579b",
         theme_color: "#ffffff",
-        start_url: "/",
-        publicPath: "/",
+        start_url: "./",
+        publicPath: "./",
         display: "standalone",
         icons: [
           {

@@ -20,10 +20,6 @@ module.exports = () => {
         template: "./index.html",
         title: "Snipp-it",
       }),
-      new InjectManifest({
-        swSrc: "./src-sw.js",
-        swDest: "sw.js",
-      }),
       new WebpackPwaManifest({
         name: "Snipp-it",
         inject: true,
@@ -40,6 +36,10 @@ module.exports = () => {
             destination: path.join("assets", "icons"),
           },
         ],
+      }),
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "sw.js",
       }),
     ],
 

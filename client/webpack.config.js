@@ -3,8 +3,6 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
 
 module.exports = () => {
   return {
@@ -22,15 +20,19 @@ module.exports = () => {
         template: "./index.html",
         title: "Snipp-it",
       }),
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "sw.js",
+      }),
       new WebpackPwaManifest({
         name: "Snipp-it",
+        inject: true,
         short_name: "Snipp-it",
         description: "A simple note taking app",
         background_color: "#01579b",
         theme_color: "#ffffff",
         start_url: "./",
         publicPath: "./",
-        display: "standalone",
         icons: [
           {
             src: path.resolve("src/images/logo.png"),
@@ -38,10 +40,6 @@ module.exports = () => {
             destination: path.join("assets", "icons"),
           },
         ],
-      }),
-      new InjectManifest({
-        swSrc: "./src-sw.js",
-        swDest: "sw.js",
       }),
     ],
 
